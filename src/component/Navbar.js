@@ -23,7 +23,7 @@ export default function () {
       </ul>
       <form className="d-flex">
         <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
-        <button className="btn btn-outline-success btn-light " type="submit">Search</button>
+        <button className="btn btn-primary " type="submit">Search</button>
       </form>
     </div>
   </div>
