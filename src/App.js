@@ -1,12 +1,18 @@
 import { Button } from "react-bootstrap";
 import "./App.css";
 import { useState } from "react";
-import StudentData from "./component/UserData";
+import Navbar from "./component/Navbar";
+import TextForm from "./component/TextForm";
 
 function App() {
   return (
     <>
-<StudentData/>
+    <Navbar/>
+    <br/>
+    <br/>
+  <div className="container">
+    <TextForm heading="Enter the text to Analyze below"/> 
+  </div>
     </>
   );
 }
