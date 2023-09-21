@@ -21,12 +21,21 @@ export default function TextForm(props) {
   const handleOnChange = (event) => {
     setText(event.target.value);
   };
+  const handleCopy =()=>{
+    let text = document.getElementById('myBox')
+    text.select();
+    navigator.clipboard.writeText(text.value)
+  }
+  const handleExtraSpace = () => {
+    let newText = text.split(/\s+/);
+    setText(newText.join(" "));
+  };
   return (
     <>
-      <div className="container">
+      <div className="container" style={{color:props.mode=== "dark"?"white":"gray"}}>
         <h1>{props.heading}</h1>
         <div className="mb-3">
-          <textarea
+          <textarea style={{backgroundColor:props.mode=== "dark"?"gray":"white",color: "dark"?"white":"gray" }}
             className="form-control"
             id="myBox"
             rows="8"
@@ -40,11 +49,17 @@ export default function TextForm(props) {
         <button className="btn btn-primary m-2" onClick={handleOlClick}>
           Convert to LowerCase
         </button>
+        <button className="btn btn-primary m-2" onClick={handleCopy}>
+          Copy Text
+        </button>
+        <button className="btn btn-primary m-2" onClick={handleExtraSpace}>
+          Remove Extra Space
+        </button>
         <button className="btn btn-primary m-2" onClick={handleOlClear}>
           Clear
         </button>
       </div>
-      <div className="container">
+      <div className="container" style={{color:props.mode=== "dark"?"white":"gray"}}>
         <h2 className="m-7">Your Text Summery</h2>
         <p>{text.split(" ").length} words and {text.length} characters</p>
         <p>{0.008 * text.split(" ").length} minutes Read</p>
