@@ -7,6 +7,12 @@ export default function TextForm(props) {
     setText(newText);
     props.showAlert("Text han been Capitilize", "success")
   };
+  const capital = () =>{
+   let newText = text.charAt(0).toUpperCase()+ text.slice(1).toLowerCase()
+   setText(newText)
+   props.showAlert("Text han been Capitalize", "success")
+
+  }
   const handleOlClick = () => {
     let newText = text.toLowerCase();
     setText(newText);
@@ -50,6 +56,9 @@ export default function TextForm(props) {
         </button>
         <button className="btn btn-primary m-2" onClick={handleOlClick}>
           Convert to LowerCase
+        </button>
+        <button className="btn btn-primary m-2" onClick={capital}>
+          Capilization
         </button>
         <button className="btn btn-primary m-2" onClick={handleCopy}>
           Copy Text

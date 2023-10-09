@@ -14,12 +14,12 @@ export default function (props) {
     </button>
     <div className="collapse navbar-collapse" id="navbarSupportedContent">
       <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-       <Link to="/"> <li className="nav-item">
-          <a className="nav-link active" aria-current="page" href="/">Home</a>
-        </li></Link>
-       <NavLink to = "about"><li className="nav-item">
-          <a className="nav-link" href="about">About</a>
-        </li></NavLink> 
+        <li className="nav-item">
+        <Link to="/"> <a className="nav-link active" aria-current="page" href="/">Home</a></Link>
+        </li>
+      <li className="nav-item">
+      <NavLink to = "about"> <a className="nav-link" href="about">About</a></NavLink> 
+        </li>
       </ul>
       {/* <form className="d-flex">
         <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
