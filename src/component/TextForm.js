@@ -43,7 +43,7 @@ export default function TextForm(props) {
       <div className="container" style={{color:props.mode=== "dark"?"white":"#002c58"}}>
         <h1>{props.heading}</h1>
         <div className="mb-3">
-          <textarea style={{backgroundColor:props.mode=== "dark"?"#002c58":"white",color:props.mode=== "dark"?"white":"#002c58" }}
+          <textarea style={{backgroundColor:props.mode=== "dark"?"#13455e":"white",color:props.mode=== "dark"?"white":"#002c58" }}
             className="form-control"
             id="myBox"
             rows="8"
@@ -66,13 +66,13 @@ export default function TextForm(props) {
         <button className="btn btn-primary m-2" onClick={handleExtraSpace}>
           Remove Extra Space
         </button>
-        <button className="btn btn-primary m-2" onClick={handleOlClear}>
+        <button className="btn btn-primary m-2  " onClick={handleOlClear}>
           Clear
         </button>
       </div>
       <div className="container" style={{color:props.mode=== "dark"?"white":"#002c58"}}>
         <h2 className="m-7">Your Text Summery</h2>
-        <p>{text.split(" ").length} words and {text.length} characters</p>
+        <p>{text.split(" ").filter((element)=>{return element.length!==0}).length} words and {text.length} characters</p>
         <p>{0.008 * text.split(" ").length} minutes Read</p>
         <h2>Preview</h2>
         <p>{text.length>0?text:"Enter Something in the TextBox above to Preview it here"}</p>

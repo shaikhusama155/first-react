@@ -47,7 +47,7 @@ function App() {
               mode={mode}
               heading="Enter the text to Analyze below"
             />}/>
-          <Route path="/about" element ={<About />}/>        
+          <Route path="/about" element ={<About mode={mode} />}/>        
         </Routes>
       </div>
     </>
