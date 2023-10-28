@@ -21,7 +21,29 @@ function App() {
       setAlert(null);
     }, 1500);
   };
-  const toggleMode = () => {
+  const removeClass = ()=>{
+    document.body.classList.remove("bg-primary")
+    document.body.classList.remove("bg-success")
+    document.body.classList.remove("bg-danger")
+    document.body.classList.remove("bg-warning")
+    document.body.classList.remove("bg-dark")
+  }
+  const toggleMode = (cls) => {
+    removeClass()
+    console.log(cls)
+    document.body.classList.add("bg-"+cls)
+    if (mode === "light") {
+      setMode("dark");
+      document.body.style.backgroundColor = "#002c58";
+      showAlert(" has been Enable", cls);
+    } else {
+      setMode("light");
+      document.body.style.backgroundColor = "white";
+      showAlert(" has been Enable", cls);
+    }
+  };
+  const darkMode = () => {
+    removeClass()
     if (mode === "light") {
       setMode("dark");
       document.body.style.backgroundColor = "#002c58";
@@ -36,7 +58,7 @@ function App() {
   return (
     <BrowserRouter>
     <>
-      <Navbar mode={mode} toggleMode={toggleMode} />
+      <Navbar mode={mode} toggleMode={toggleMode} darkMode={darkMode} />
       <Alert alert={alert} />
       <br />
       <br />
