@@ -66,7 +66,7 @@ export default function (props) {
                  style={{height:"30px", width:"30px", cursor:"pointer"}}
               ></div>
             </div>
-            <div
+            {/* <div
               className={`form-check form-switch text-${
                 props.mode === "light" ? "dark" : "light"
               }`}
@@ -84,7 +84,7 @@ export default function (props) {
                 {" "}
                 DarkMode
               </label>
-            </div>
+            </div> */}
           </div>
         </div>
       </nav>
