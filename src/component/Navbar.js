@@ -1,17 +1,17 @@
 import React from "react";
 import "../App.css";
 import { NavLink, Link } from "react-router-dom";
-import { height } from "@mui/system";
 
 // import { a } from 'react-router-dom'
 export default function (props) {
   return (
     <div>
       <nav
-        className={`navbar navbar-expand-lg navbar-${props.mode} bg-${props.mode}`}
+      style={{ background: "linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%)" }}
+        className={`navbar navbar-expand-lg navbar-dark bg-${props.mode}`}
       >
         <div className="container-fluid">
-          <a className="navbar-brand white" href="#">
+          <a className="navbar-brand white" href="/">
             TextUtils
           </a>
           <button
@@ -44,7 +44,7 @@ export default function (props) {
               </li>
             </ul>
 
-            <div className="d-flex">
+            {/* <div className="d-flex">
               <div
                 className="bg-primary rounded mx-2" 
                 onClick={()=>{props.toggleMode("primary")}}
@@ -65,8 +65,8 @@ export default function (props) {
                 onClick={()=>{props.toggleMode("warning")}}
                  style={{height:"30px", width:"30px", cursor:"pointer"}}
               ></div>
-            </div>
-            {/* <div
+            </div> */}
+            <div
               className={`form-check form-switch text-${
                 props.mode === "light" ? "dark" : "light"
               }`}
@@ -84,7 +84,7 @@ export default function (props) {
                 {" "}
                 DarkMode
               </label>
-            </div> */}
+            </div>
           </div>
         </div>
       </nav>
